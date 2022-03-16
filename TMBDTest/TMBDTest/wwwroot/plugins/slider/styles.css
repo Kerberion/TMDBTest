@@ -254,6 +254,37 @@ header {
         background: red;
     }
 
+/*TV Rated*/
+.contenedor-titulo-controlesTvRated {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.Seccion {
+    color: #fff;
+    font-size: 30px;
+}
+
+.contenedor-titulo-controlesTvRated h3 {
+    color: #fff;
+    font-size: 20px;
+}
+
+.contenedor-titulo-controlesTvRated .indicadoresTvRated button {
+    background: #fff;
+    height: 3px;
+    width: 10px;
+    cursor: pointer;
+    border: none;
+    margin-right: 2px;
+}
+
+    .contenedor-titulo-controlesTvRated .indicadoresTvRated button:hover,
+    .contenedor-titulo-controlesTvRated .indicadoresTvRated button.activo {
+        background: red;
+    }
+
 /* ---- ----- ----- Contenedor Principal y Flechas ----- ----- ----- */
 .peliculas-favoritas {
     margin-bottom: 70px;
@@ -598,6 +629,75 @@ header {
                     width: 100%;
                     vertical-align: top;
                 }
+
+/*TV Rated*/
+.peliculas-TvRated {
+    margin-bottom: 70px;
+}
+
+    .peliculas-TvRated .contenedor-principalTvRated {
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+
+        .peliculas-TvRated .contenedor-principalTvRated .flecha-izquierdaTvRated,
+        .peliculas-TvRated .contenedor-principalTvRated .flecha-derechaTvRated {
+            position: absolute;
+            border: none;
+            background: rgba(0,0,0,0.3);
+            font-size: 40px;
+            height: 50%;
+            top: calc(50% - 25%);
+            line-height: 40px;
+            width: 50px;
+            color: #fff;
+            cursor: pointer;
+            z-index: 500;
+            transition: .2s ease all;
+        }
+
+            .peliculas-TvRated .contenedor-principalTvRated .flecha-izquierdaTvRated:hover,
+            .peliculas-TvRated .contenedor-principalTvRated .flecha-derechaTvRated:hover {
+                background: rgba(0,0,0, .9);
+            }
+
+        .peliculas-TvRated .contenedor-principalTvRated .flecha-izquierdaTvRated {
+            left: 0;
+        }
+
+        .peliculas-TvRated .contenedor-principalTvRated .flecha-derechaTvRated {
+            right: 0;
+        }
+
+    /* ---- ----- ----- Carousel TV RECOMMENDATIONS ----- ----- ----- */
+    .peliculas-TvRated .contenedor-carouselTvRated {
+        width: 100%;
+        padding: 20px 0;
+        overflow: hidden;
+        scroll-behavior: smooth;
+    }
+
+        .peliculas-TvRated .contenedor-carouselTvRated .carousel {
+            display: flex;
+            flex-wrap: nowrap;
+        }
+
+            .peliculas-TvRated .contenedor-carouselTvRated .carousel .peliculaTvRated {
+                min-width: 20%;
+                transition: .3s ease all;
+                box-shadow: 5px 5px 10px rgba(0,0,0, .3);
+            }
+
+                .peliculas-TvRated .contenedor-carouselTvRated .carousel .peliculaTvRated.hover {
+                    transform: scale(1.2);
+                    transform-origin: center;
+                }
+
+                .peliculas-TvRated .contenedor-carouselTvRated .carousel .peliculaTvRated img {
+                    width: 100%;
+                    vertical-align: top;
+                }
 /* ---- ----- ----- Media Queries ----- ----- ----- */
 @media screen and (max-width: 800px) {
     header .logotipo {
@@ -699,6 +799,23 @@ header {
     .peliculas-TvRecommendations .indicadoresTvRecommendations,
     .peliculas-TvRecommendations .flecha-izquierdaTvRecommendations,
     .peliculas-TvRecommendations .flecha-derechaTvRecommendations {
+        display: none;
+    }
+
+    /*TV Rated*/
+    .peliculas-TvRated .contenedor-carouselTvRated {
+        overflow: visible;
+    }
+
+        .peliculas-TvRated .contenedor-carouselTvRated .carousel {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+    .peliculas-TvRated .indicadoresTvRated,
+    .peliculas-TvRated .flecha-izquierdaTvRated,
+    .peliculas-TvRated .flecha-derechaTvRated {
         display: none;
     }
 }

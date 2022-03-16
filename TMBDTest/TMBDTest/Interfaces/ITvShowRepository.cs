@@ -10,6 +10,6 @@ namespace TMBDTest.Interfaces
     {
         GenericResponse<TvPopularViewModel> GetTvPopular();
         GenericResponse<TvRecommendationsViewModel> GetTvRecommendations();
-        //GenericResponse<RatedViewModel> GetTvRated();
+        GenericResponse<TvRatedViewModel> GetTvRated();
     }
 }
