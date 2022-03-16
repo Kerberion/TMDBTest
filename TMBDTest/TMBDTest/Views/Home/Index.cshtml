@@ -1,182 +1,98 @@
-﻿@model PopularViewModel
-<div class="wrapper noselect">
+﻿@model MainViewModel
+<div class="peliculas-favoritas contenedor">
+    <h2 class="Seccion">PELICULAS</h2></br>
 
-    <!-- Strip Carousel -->
-    <h1><span><a href="#"><b>PELICULAS</b></a></span></h1>
+    <div class="contenedor-titulo-controles">
 
-    <span><a href="#">Favoritos</a></span>
-    <div class="strip-carousel" id="favoritos">
-        <div class="arrow-left">&lsaquo;</div>
-        <div class="arrow-right">&rsaquo;</div>
+        <h3>Favoritas</h3>
+        <div class="indicadores"></div>
+    </div>
 
-        <div class="frames">
+    <div class="contenedor-principal">
+        <button role="button" id="flecha-izquierda" class="flecha-izquierda"><i class="fas fa-angle-left"></i></button>
 
-            @foreach (var item in Model.results)
-            {
-                string srcImg = "https://image.tmdb.org/t/p/w500" + @item.poster_path;
-                <a href="#"><div class="frame"><img class="responsiveimg" src=@srcImg alt="Describe Image"></div></a>}
+        <div class="contenedor-carousel1">
+            <div class="carousel">
 
+                @foreach (var item in Model.popularViewModel.results)
+                {
+                    string srcImg = "https://image.tmdb.org/t/p/w500" + @item.poster_path;
 
-            @*<a href="#">
-            <div class="frame">
-                <img src="https://occ-0-1567-1123.1.nflxso.net/dnm/api/v5/rendition/412e4119fb212e3ca9f1add558e2e7fed42f8fb4/AAAABRvngexxF8H1-OzRWFSj6ddD-aB93tTBP9kMNz3cIVfuIfLEP1E_0saiNAwOtrM6xSOXvoiSCMsihWSkW0dq808-R7_lBnr6WHbjkKBX6I3sD0uCcS8kSPbRjEDdG8CeeVXEAEV6spQ.webp" alt="Describe Image">
+    <div class="pelicula">
+        <a href="#"><img src=@srcImg alt=""></a>
+    </div>}
             </div>
-        </a>
-        <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-        <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-        <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-        <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-
-        <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-        <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-        <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-        <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-        <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-
-        <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-        <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-        <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-        <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>*@
         </div>
+
+
+
+        <button role="button" id="flecha-derecha" class="flecha-derecha"><i class="fas fa-angle-right"></i></button>
     </div>
 
-
-    <!-- Strip Carousel -->
-    <span><a href="#">Recomendaciones</a></span>
-    <div class="strip-carousel" id="recomendaciones">
-        <div class="arrow-left">&lsaquo;</div>
-        <div class="arrow-right">&rsaquo;</div>
-
-        <div class="frames">
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-        </div>
-    </div>
-
-    <span><a href="#">Clasificados</a></span>
-    <div class="strip-carousel" id="clasificados">
-        <div class="arrow-left">&lsaquo;</div>
-        <div class="arrow-right">&rsaquo;</div>
-
-        <div class="frames">
-
-            @foreach (var item in Model.results)
-            {
-                <a href="#"><div class="frame"><img src="https://image.tmdb.org/t/p/w500" + @item.poster_path alt="Describe Image"></div></a>
-            }
-
-            @*<a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>*@
-        </div>
-    </div>
-
-
-    <!--Comienzan los TvShows-->
-    <h1><span><a href="#"><b>TV SHOW</b></a></span></h1>
-
-    <span><a href="#">Favoritos</a></span>
-    <div class="strip-carousel" id="favoritos">
-        <div class="arrow-left">&lsaquo;</div>
-        <div class="arrow-right">&rsaquo;</div>
-
-        <div class="frames">
-            <a href="#">
-                <div class="frame">
-                    <img src="https://occ-0-1567-1123.1.nflxso.net/dnm/api/v5/rendition/412e4119fb212e3ca9f1add558e2e7fed42f8fb4/AAAABRvngexxF8H1-OzRWFSj6ddD-aB93tTBP9kMNz3cIVfuIfLEP1E_0saiNAwOtrM6xSOXvoiSCMsihWSkW0dq808-R7_lBnr6WHbjkKBX6I3sD0uCcS8kSPbRjEDdG8CeeVXEAEV6spQ.webp" alt="Describe Image">
-                </div>
-            </a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-        </div>
-    </div>
-
-
-    <!-- Strip Carousel -->
-    <span><a href="#">Recomendaciones</a></span>
-    <div class="strip-carousel" id="recomendaciones">
-        <div class="arrow-left">&lsaquo;</div>
-        <div class="arrow-right">&rsaquo;</div>
-
-        <div class="frames">
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-        </div>
-    </div>
-
-    <span><a href="#">Clasificados</a></span>
-    <div class="strip-carousel" id="clasificados">
-        <div class="arrow-left">&lsaquo;</div>
-        <div class="arrow-right">&rsaquo;</div>
-
-        <div class="frames">
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-        </div>
-    </div>
 </div>
-<!-- partial -->
+
+@*POPULARES*@
+<div class="peliculas-populares contenedor">
+    @*<h2 class="Seccion">PELICULAS</h2>*@</br>
+
+    <div class="contenedor-titulo-controles2">
+
+        <h3>Populares</h3>
+        <div class="indicadores2"></div>
+    </div>
+
+    <div class="contenedor-principal2">
+        <button role="button" id="flecha-izquierda2" class="flecha-izquierda2"><i class="fas fa-angle-left"></i></button>
+
+        <div class="contenedor-carousel2">
+            <div class="carousel">
+
+                @foreach (var item in Model.recommendationsViewModel.results)
+                {
+                    string srcImg = "https://image.tmdb.org/t/p/w500" + @item.poster_path;
+
+    <div class="pelicula2">
+        <a href="#"><img src=@srcImg alt=""></a>
+    </div>}
+            </div>
+        </div>
+
+
+
+        <button role="button" id="flecha-derecha2" class="flecha-derecha2"><i class="fas fa-angle-right"></i></button>
+    </div>
+
+</div>
+
+@*CLASIFICADOS*@
+<div class="peliculas-clasificados contenedor">
+    @*<h2 class="Seccion">PELICULAS</h2>*@</br>
+
+    <div class="contenedor-titulo-controles3">
+
+        <h3>Clasificados</h3>
+        <div class="indicadores3"></div>
+    </div>
+
+    <div class="contenedor-principal3">
+        <button role="button" id="flecha-izquierda3" class="flecha-izquierda3"><i class="fas fa-angle-left"></i></button>
+
+        <div class="contenedor-carousel3">
+            <div class="carousel">
+
+                @*@foreach (var item in Model.results)
+                {
+                    string srcImg = "https://image.tmdb.org/t/p/w500" + @item.poster_path;
+
+    <div class="pelicula3">
+        <a href="#"><img src=@srcImg alt=""></a>
+    </div>}*@
+            </div>
+        </div>
+
+
+
+        <button role="button" id="flecha-derecha3" class="flecha-derecha3"><i class="fas fa-angle-right"></i></button>
+    </div>
+
+</div>

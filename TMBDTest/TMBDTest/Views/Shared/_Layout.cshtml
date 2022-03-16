@@ -2,20 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>CodePen - Strip Carousel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="~/plugins/slider/styles.css">
-
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <title>Netflix</title>
 </head>
 <body>
-    <!-- partial:index.partial.html -->
-    <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100;200;300;400;500;600;700&family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <header>
+        <div class="contenedor">
+            <h2 class="logotipo">NETFLIX</h2>
+            <nav>
+                <a href="#" class="activo">Inicio</a>
+                <a href="#">Programas</a>
+                <a href="#">Películas</a>
+                <a href="#">Más Recientes</a>
+                <a href="#">Mi lista</a>
+            </nav>
+        </div>
+    </header>
 
-    <h1 class="titulo">NETFLIX</h1>
+    <main>
+        @*<div class="pelicula-principal">
+                <div class="contenedor">
+                    <h3 class="titulo">Interestellar</h3>
+                    <p class="descripcion">
+                        Narra las aventuras de un grupo de exploradores que hacen uso de un agujero de gusano recientemente descubierto para superar las limitaciones de los viajes espaciales tripulados y vencer las inmensas distancias que tiene un viaje interestelar.
+                    </p>
+                    <button role="button" class="boton"><i class="fas fa-play"></i>Reproducir</button>
+                    <button role="button" class="boton"><i class="fas fa-info-circle"></i>Más información</button>
+                </div>
+            </div>*@
 
-    @RenderBody()
+        @RenderBody()
+    </main>
 
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
-    <script src="~/plugins/slider/slider.js"></script>
-
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+    <script src="~/plugins/slider/carousel1.js"></script>
+    <script src="~/plugins/slider/carousel2.js"></script>
+    <script src="~/plugins/slider/carousel3.js"></script>
 </body>
 </html>

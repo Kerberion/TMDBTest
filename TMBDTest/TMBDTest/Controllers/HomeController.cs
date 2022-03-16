@@ -24,10 +24,18 @@ namespace TMBDTest.Controllers
 
         public IActionResult Index()
         {
+            var mainViewmodel = new MainViewModel();
 
-            var generiResponse = _peliculaRepository.GetPopular();
-            PopularViewModel popularViewModel = generiResponse.datos;
-            return View(popularViewModel);
+            var generiResponsePopular = _peliculaRepository.GetPopular();
+            PopularViewModel popularViewModel = generiResponsePopular.datos;
+
+            var generiResponseRecommendations = _peliculaRepository.GetRecommendations();
+            RecommendationsViewModel recommendationsViewModel = generiResponseRecommendations.datos;
+
+            mainViewmodel.popularViewModel = popularViewModel;
+            mainViewmodel.recommendationsViewModel = recommendationsViewModel;
+
+            return View(mainViewmodel);
         }
 
         //public IActionResult Privacy()

@@ -21,18 +21,21 @@ namespace TMBDTest.Repository
         public GenericResponse<PopularViewModel> GetPopular()
         {
             var response = new GenericResponse<PopularViewModel>();
-            _serviceClient = new ServiceClient();
+            _serviceClient = new ServiceClient();            
 
-            //response = _serviceClient.Get<PopularViewModel>("", false);
-
-            Task.Run(async () => response = await _serviceClient.Get<PopularViewModel>($"movie/634649/recommendations?api_key={_apiKey}&language=en-US&page=1", false)).Wait();
+            Task.Run(async () => response = await _serviceClient.Get<PopularViewModel>($"movie/popular?api_key={_apiKey}&language=es&page=1", false)).Wait();
 
             return response;
         }
 
         public GenericResponse<RecommendationsViewModel> GetRecommendations()
         {
-            throw new NotImplementedException();
+            var response = new GenericResponse<RecommendationsViewModel>();
+            _serviceClient = new ServiceClient();
+
+            Task.Run(async () => response = await _serviceClient.Get<RecommendationsViewModel>($"movie/634649/recommendations?api_key={_apiKey}&language=es&page=1", false)).Wait();
+
+            return response;
         }
     }
 }
