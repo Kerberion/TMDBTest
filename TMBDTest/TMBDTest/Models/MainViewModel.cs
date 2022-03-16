@@ -11,6 +11,7 @@ namespace TMBDTest.Models
         public RecommendationsViewModel recommendationsViewModel { get; set; }
         public RatedViewModel ratedViewModel { get; set; }
         public TvPopularViewModel tvPopularViewModel { get; set; }
+        public TvRecommendationsViewModel tvRecommendationsViewModel { get; set; }
 
         public MainViewModel()
         {
@@ -18,6 +19,7 @@ namespace TMBDTest.Models
             recommendationsViewModel = new RecommendationsViewModel();
             ratedViewModel = new RatedViewModel();
             tvPopularViewModel = new TvPopularViewModel();
+            tvRecommendationsViewModel = new TvRecommendationsViewModel();
         }
     }
 }

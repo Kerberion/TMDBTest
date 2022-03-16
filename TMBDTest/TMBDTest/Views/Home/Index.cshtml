@@ -101,7 +101,7 @@
 @*TV FAVORITOS*@
 <div class="peliculas-tvFavoritos contenedor">
     <h2 class="Seccion">TV SHOWS</h2></br>
-    
+
 
     <div class="contenedor-titulo-controlestvFavoritos">
 
@@ -128,6 +128,39 @@
 
 
         <button role="button" id="flecha-derechatvFavoritos" class="flecha-derechatvFavoritos"><i class="fas fa-angle-right"></i></button>
+    </div>
+
+</div>
+
+
+@*TV RECOMENDADOS*@
+<div class="peliculas-TvRecommendations contenedor">
+    
+    <div class="contenedor-titulo-controlesTvRecommendations">
+
+        <h3>TV Recomendaciones</h3>
+        <div class="indicadoresTvRecommendations"></div>
+    </div>
+
+    <div class="contenedor-principalTvRecommendations">
+        <button role="button" id="flecha-izquierdaTvRecommendations" class="flecha-izquierdaTvRecommendations"><i class="fas fa-angle-left"></i></button>
+
+        <div class="contenedor-carouselTvRecommendations">
+            <div class="carousel">
+
+                @foreach (var item in Model.tvRecommendationsViewModel.results)
+                {
+                    string srcImg = "https://image.tmdb.org/t/p/w500" + @item.poster_path;
+
+    <div class="peliculaTvRecommendations">
+        <a href="#"><img src=@srcImg alt=""></a>
+    </div>}
+            </div>
+        </div>
+
+
+
+        <button role="button" id="flecha-derechaTvRecommendations" class="flecha-derechaTvRecommendations"><i class="fas fa-angle-right"></i></button>
     </div>
 
 </div>

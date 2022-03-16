@@ -223,6 +223,37 @@ header {
         background: red;
     }
 
+/*TV Recommendations*/
+.contenedor-titulo-controlesTvRecommendations {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.Seccion {
+    color: #fff;
+    font-size: 30px;
+}
+
+.contenedor-titulo-controlesTvRecommendations h3 {
+    color: #fff;
+    font-size: 20px;
+}
+
+.contenedor-titulo-controlesTvRecommendations .indicadoresTvRecommendations button {
+    background: #fff;
+    height: 3px;
+    width: 10px;
+    cursor: pointer;
+    border: none;
+    margin-right: 2px;
+}
+
+    .contenedor-titulo-controlesTvRecommendations .indicadoresTvRecommendations button:hover,
+    .contenedor-titulo-controlesTvRecommendations .indicadoresTvRecommendations button.activo {
+        background: red;
+    }
+
 /* ---- ----- ----- Contenedor Principal y Flechas ----- ----- ----- */
 .peliculas-favoritas {
     margin-bottom: 70px;
@@ -498,6 +529,75 @@ header {
                     width: 100%;
                     vertical-align: top;
                 }
+
+/*TV Recommendations*/
+.peliculas-TvRecommendations {
+    margin-bottom: 70px;
+}
+
+    .peliculas-TvRecommendations .contenedor-principalTvRecommendations {
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+
+        .peliculas-TvRecommendations .contenedor-principalTvRecommendations .flecha-izquierdaTvRecommendations,
+        .peliculas-TvRecommendations .contenedor-principalTvRecommendations .flecha-derechaTvRecommendations {
+            position: absolute;
+            border: none;
+            background: rgba(0,0,0,0.3);
+            font-size: 40px;
+            height: 50%;
+            top: calc(50% - 25%);
+            line-height: 40px;
+            width: 50px;
+            color: #fff;
+            cursor: pointer;
+            z-index: 500;
+            transition: .2s ease all;
+        }
+
+            .peliculas-TvRecommendations .contenedor-principalTvRecommendations .flecha-izquierdaTvRecommendations:hover,
+            .peliculas-TvRecommendations .contenedor-principalTvRecommendations .flecha-derechaTvRecommendations:hover {
+                background: rgba(0,0,0, .9);
+            }
+
+        .peliculas-TvRecommendations .contenedor-principalTvRecommendations .flecha-izquierdaTvRecommendations {
+            left: 0;
+        }
+
+        .peliculas-TvRecommendations .contenedor-principalTvRecommendations .flecha-derechaTvRecommendations {
+            right: 0;
+        }
+
+    /* ---- ----- ----- Carousel TV RECOMMENDATIONS ----- ----- ----- */
+    .peliculas-TvRecommendations .contenedor-carouselTvRecommendations {
+        width: 100%;
+        padding: 20px 0;
+        overflow: hidden;
+        scroll-behavior: smooth;
+    }
+
+        .peliculas-TvRecommendations .contenedor-carouselTvRecommendations .carousel {
+            display: flex;
+            flex-wrap: nowrap;
+        }
+
+            .peliculas-TvRecommendations .contenedor-carouselTvRecommendations .carousel .peliculaTvRecommendations {
+                min-width: 20%;
+                transition: .3s ease all;
+                box-shadow: 5px 5px 10px rgba(0,0,0, .3);
+            }
+
+                .peliculas-TvRecommendations .contenedor-carouselTvRecommendations .carousel .peliculaTvRecommendations.hover {
+                    transform: scale(1.2);
+                    transform-origin: center;
+                }
+
+                .peliculas-TvRecommendations .contenedor-carouselTvRecommendations .carousel .peliculaTvRecommendations img {
+                    width: 100%;
+                    vertical-align: top;
+                }
 /* ---- ----- ----- Media Queries ----- ----- ----- */
 @media screen and (max-width: 800px) {
     header .logotipo {
@@ -582,6 +682,23 @@ header {
     .peliculas-tvFavoritos .indicadorestvFavoritos,
     .peliculas-tvFavoritos .flecha-izquierdatvFavoritos,
     .peliculas-tvFavoritos .flecha-derechatvFavoritos {
+        display: none;
+    }
+
+    /*TV Recommendations*/
+    .peliculas-TvRecommendations .contenedor-carouselTvRecommendations {
+        overflow: visible;
+    }
+
+        .peliculas-TvRecommendations .contenedor-carouselTvRecommendations .carousel {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+    .peliculas-TvRecommendations .indicadoresTvRecommendations,
+    .peliculas-TvRecommendations .flecha-izquierdaTvRecommendations,
+    .peliculas-TvRecommendations .flecha-derechaTvRecommendations {
         display: none;
     }
 }

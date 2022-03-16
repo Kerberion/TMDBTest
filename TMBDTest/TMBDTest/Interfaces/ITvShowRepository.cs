@@ -9,7 +9,7 @@ namespace TMBDTest.Interfaces
     public interface ITvShowRepository
     {
         GenericResponse<TvPopularViewModel> GetTvPopular();
-        //GenericResponse<RecommendationsViewModel> GetTvRecommendations();
+        GenericResponse<TvRecommendationsViewModel> GetTvRecommendations();
         //GenericResponse<RatedViewModel> GetTvRated();
     }
 }

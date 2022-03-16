@@ -26,6 +26,16 @@ namespace TMBDTest.Repository
             return response;
         }
 
+        public GenericResponse<TvRecommendationsViewModel> GetTvRecommendations()
+        {
+            var response = new GenericResponse<TvRecommendationsViewModel>();
+            _serviceClient = new ServiceClient();
+
+            Task.Run(async () => response = await _serviceClient.Get<TvRecommendationsViewModel>($"tv/60574/recommendations?api_key={_apiKey}&language=es&page=1", false)).Wait();
+
+            return response;
+        }
+
 
     }
 }

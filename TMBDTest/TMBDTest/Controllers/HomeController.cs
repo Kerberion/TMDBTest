@@ -44,10 +44,14 @@ namespace TMBDTest.Controllers
             var generiResponseTvPopular = _tvShowRepository.GetTvPopular();
             TvPopularViewModel tvPopularViewModel = generiResponseTvPopular.datos;
 
+            var generiResponseTvRecommendations = _tvShowRepository.GetTvRecommendations();
+            TvRecommendationsViewModel tvRecommendationsViewModel = generiResponseTvRecommendations.datos;
+
             mainViewmodel.popularViewModel = popularViewModel;
             mainViewmodel.recommendationsViewModel = recommendationsViewModel;
             mainViewmodel.ratedViewModel = ratedViewModel;
             mainViewmodel.tvPopularViewModel = tvPopularViewModel;
+            mainViewmodel.tvRecommendationsViewModel = tvRecommendationsViewModel;
 
             return View(mainViewmodel);
         }
