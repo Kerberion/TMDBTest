@@ -8,7 +8,9 @@ namespace TMBDTest.Interfaces
 {
     public interface IPeliculaRepository
     {
-        GenericResponse<RecommendationsViewModel> GetRecommendations();
         GenericResponse<PopularViewModel> GetPopular();
+        GenericResponse<RecommendationsViewModel> GetRecommendations();
+        GenericResponse<RatedViewModel> GetRated();
+
     }
 }

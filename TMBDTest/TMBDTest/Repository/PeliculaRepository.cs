@@ -37,5 +37,15 @@ namespace TMBDTest.Repository
 
             return response;
         }
+
+        public GenericResponse<RatedViewModel> GetRated()
+        {
+            var response = new GenericResponse<RatedViewModel>();
+            _serviceClient = new ServiceClient();
+
+            Task.Run(async () => response = await _serviceClient.Get<RatedViewModel>($"movie/top_rated?api_key={_apiKey}&language=es&page=1", false)).Wait();
+
+            return response;
+        }
     }
 }

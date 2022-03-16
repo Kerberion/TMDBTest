@@ -130,7 +130,7 @@ header {
             background: red;
         }
 
-/*POPULARES*/
+/*recommendations*/
 .contenedor-titulo-controles2 {
     display: flex;
     justify-content: space-between;
@@ -192,6 +192,36 @@ header {
         background: red;
     }
 
+/*TV FAVORITOS*/
+.contenedor-titulo-controlestvFavoritos {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.Seccion {
+    color: #fff;
+    font-size: 30px;
+}
+
+.contenedor-titulo-controlestvFavoritos h3 {
+    color: #fff;
+    font-size: 20px;
+}
+
+.contenedor-titulo-controlestvFavoritos .indicadorestvFavoritos button {
+    background: #fff;
+    height: 3px;
+    width: 10px;
+    cursor: pointer;
+    border: none;
+    margin-right: 2px;
+}
+
+    .contenedor-titulo-controlestvFavoritos .indicadorestvFavoritos button:hover,
+    .contenedor-titulo-controlestvFavoritos .indicadorestvFavoritos button.activo {
+        background: red;
+    }
 
 /* ---- ----- ----- Contenedor Principal y Flechas ----- ----- ----- */
 .peliculas-favoritas {
@@ -262,19 +292,19 @@ header {
                     vertical-align: top;
                 }
 
-   /*Peliculas populares*/
-.peliculas-populares {
+   /*Peliculas recommendations*/
+.peliculas-recommendations {
     margin-bottom: 70px;
 }
 
-    .peliculas-populares .contenedor-principal2 {
+    .peliculas-recommendations .contenedor-principal2 {
         display: flex;
         align-items: center;
         position: relative;
     }
 
-        .peliculas-populares .contenedor-principal2 .flecha-izquierda2,
-        .peliculas-populares .contenedor-principal2 .flecha-derecha2 {
+        .peliculas-recommendations .contenedor-principal2 .flecha-izquierda2,
+        .peliculas-recommendations .contenedor-principal2 .flecha-derecha2 {
             position: absolute;
             border: none;
             background: rgba(0,0,0,0.3);
@@ -289,44 +319,44 @@ header {
             transition: .2s ease all;
         }
 
-            .peliculas-populares .contenedor-principal2 .flecha-izquierda2:hover,
-            .peliculas-populares .contenedor-principal2 .flecha-derecha2:hover {
+            .peliculas-recommendations .contenedor-principal2 .flecha-izquierda2:hover,
+            .peliculas-recommendations .contenedor-principal2 .flecha-derecha2:hover {
                 background: rgba(0,0,0, .9);
             }
 
-        .peliculas-populares .contenedor-principal2 .flecha-izquierda2 {
+        .peliculas-recommendations .contenedor-principal2 .flecha-izquierda2 {
             left: 0;
         }
 
-        .peliculas-populares .contenedor-principal2 .flecha-derecha2 {
+        .peliculas-recommendations .contenedor-principal2 .flecha-derecha2 {
             right: 0;
         }
 
     /* ---- ----- ----- Carousel2 ----- ----- ----- */
-    .peliculas-populares .contenedor-carousel2 {
+    .peliculas-recommendations .contenedor-carousel2 {
         width: 100%;
         padding: 20px 0;
         overflow: hidden;
         scroll-behavior: smooth;
     }
 
-        .peliculas-populares .contenedor-carousel2 .carousel {
+        .peliculas-recommendations .contenedor-carousel2 .carousel {
             display: flex;
             flex-wrap: nowrap;
         }
 
-            .peliculas-populares .contenedor-carousel2 .carousel .pelicula2 {
+            .peliculas-recommendations .contenedor-carousel2 .carousel .pelicula2 {
                 min-width: 20%;
                 transition: .3s ease all;
                 box-shadow: 5px 5px 10px rgba(0,0,0, .3);
             }
 
-                .peliculas-populares .contenedor-carousel2 .carousel .pelicula2.hover {
+                .peliculas-recommendations .contenedor-carousel2 .carousel .pelicula2.hover {
                     transform: scale(1.2);
                     transform-origin: center;
                 }
 
-                .peliculas-populares .contenedor-carousel2 .carousel .pelicula2 img {
+                .peliculas-recommendations .contenedor-carousel2 .carousel .pelicula2 img {
                     width: 100%;
                     vertical-align: top;
                 }
@@ -399,6 +429,75 @@ header {
                     width: 100%;
                     vertical-align: top;
                 }
+
+/*TV Favoritos*/
+.peliculas-tvFavoritos {
+    margin-bottom: 70px;
+}
+
+    .peliculas-tvFavoritos .contenedor-principaltvFavoritos {
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+
+        .peliculas-tvFavoritos .contenedor-principaltvFavoritos .flecha-izquierdatvFavoritos,
+        .peliculas-tvFavoritos .contenedor-principaltvFavoritos .flecha-derechatvFavoritos {
+            position: absolute;
+            border: none;
+            background: rgba(0,0,0,0.3);
+            font-size: 40px;
+            height: 50%;
+            top: calc(50% - 25%);
+            line-height: 40px;
+            width: 50px;
+            color: #fff;
+            cursor: pointer;
+            z-index: 500;
+            transition: .2s ease all;
+        }
+
+            .peliculas-tvFavoritos .contenedor-principaltvFavoritos .flecha-izquierdatvFavoritos:hover,
+            .peliculas-tvFavoritos .contenedor-principaltvFavoritos .flecha-derechatvFavoritos:hover {
+                background: rgba(0,0,0, .9);
+            }
+
+        .peliculas-tvFavoritos .contenedor-principaltvFavoritos .flecha-izquierdatvFavoritos {
+            left: 0;
+        }
+
+        .peliculas-tvFavoritos .contenedor-principaltvFavoritos .flecha-derechatvFavoritos {
+            right: 0;
+        }
+
+    /* ---- ----- ----- Carousel TV FAVORITOS ----- ----- ----- */
+    .peliculas-tvFavoritos .contenedor-carouseltvFavoritos {
+        width: 100%;
+        padding: 20px 0;
+        overflow: hidden;
+        scroll-behavior: smooth;
+    }
+
+        .peliculas-tvFavoritos .contenedor-carouseltvFavoritos .carousel {
+            display: flex;
+            flex-wrap: nowrap;
+        }
+
+            .peliculas-tvFavoritos .contenedor-carouseltvFavoritos .carousel .peliculatvFavoritos {
+                min-width: 20%;
+                transition: .3s ease all;
+                box-shadow: 5px 5px 10px rgba(0,0,0, .3);
+            }
+
+                .peliculas-tvFavoritos .contenedor-carouseltvFavoritos .carousel .peliculatvFavoritos.hover {
+                    transform: scale(1.2);
+                    transform-origin: center;
+                }
+
+                .peliculas-tvFavoritos .contenedor-carouseltvFavoritos .carousel .peliculatvFavoritos img {
+                    width: 100%;
+                    vertical-align: top;
+                }
 /* ---- ----- ----- Media Queries ----- ----- ----- */
 @media screen and (max-width: 800px) {
     header .logotipo {
@@ -435,29 +534,29 @@ header {
         display: none;
     }
 
-    /*POPULARES*/
-    .peliculas-populares .contenedor-carouse2 {
+    /*RECOMMENDATIONS*/
+    .peliculas-recommendations .contenedor-carousel2 {
         overflow: visible;
     }
 
-        .peliculas-populares .contenedor-carouse2 .carousel {
+        .peliculas-recommendations .contenedor-carousel2 .carousel {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
         }
 
-    .peliculas-populares .indicadores2,
-    .peliculas-populares .flecha-izquierda2,
-    .peliculas-populares .flecha-derecha2 {
+    .peliculas-recommendations .indicadores2,
+    .peliculas-recommendations .flecha-izquierda2,
+    .peliculas-recommendations .flecha-derecha2 {
         display: none;
     }
 
     /*CLASIFICADOS*/
-    .peliculas-clasificados .contenedor-carouse3 {
+    .peliculas-clasificados .contenedor-carousel3 {
         overflow: visible;
     }
 
-        .peliculas-clasificados .contenedor-carouse3 .carousel {
+        .peliculas-clasificados .contenedor-carousel3 .carousel {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
@@ -466,6 +565,23 @@ header {
     .peliculas-clasificados .indicadores3,
     .peliculas-clasificados .flecha-izquierda3,
     .peliculas-clasificados .flecha-derecha3 {
+        display: none;
+    }
+
+    /*TV FAVORITOS*/
+    .peliculas-tvFavoritos .contenedor-carouseltvFavoritos {
+        overflow: visible;
+    }
+
+        .peliculas-tvFavoritos .contenedor-carouseltvFavoritos .carousel {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+    .peliculas-tvFavoritos .indicadorestvFavoritos,
+    .peliculas-tvFavoritos .flecha-izquierdatvFavoritos,
+    .peliculas-tvFavoritos .flecha-derechatvFavoritos {
         display: none;
     }
 }

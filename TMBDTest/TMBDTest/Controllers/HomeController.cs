@@ -15,16 +15,20 @@ namespace TMBDTest.Controllers
         private readonly ILogger<HomeController> _logger;
 
         private readonly IPeliculaRepository _peliculaRepository;
+        private readonly ITvShowRepository _tvShowRepository;
 
-        public HomeController(ILogger<HomeController> logger,IPeliculaRepository peliculaRepository)
+        public HomeController(ILogger<HomeController> logger,IPeliculaRepository peliculaRepository, ITvShowRepository tvShowRepository)
         {
             _logger = logger;
             _peliculaRepository = peliculaRepository;
+            _tvShowRepository = tvShowRepository;
         }
 
         public IActionResult Index()
         {
             var mainViewmodel = new MainViewModel();
+
+            //Películas
 
             var generiResponsePopular = _peliculaRepository.GetPopular();
             PopularViewModel popularViewModel = generiResponsePopular.datos;
@@ -32,8 +36,18 @@ namespace TMBDTest.Controllers
             var generiResponseRecommendations = _peliculaRepository.GetRecommendations();
             RecommendationsViewModel recommendationsViewModel = generiResponseRecommendations.datos;
 
+            var generiResponseRated = _peliculaRepository.GetRated();
+            RatedViewModel ratedViewModel = generiResponseRated.datos;
+
+            //TV Shows
+
+            var generiResponseTvPopular = _tvShowRepository.GetTvPopular();
+            TvPopularViewModel tvPopularViewModel = generiResponseTvPopular.datos;
+
             mainViewmodel.popularViewModel = popularViewModel;
             mainViewmodel.recommendationsViewModel = recommendationsViewModel;
+            mainViewmodel.ratedViewModel = ratedViewModel;
+            mainViewmodel.tvPopularViewModel = tvPopularViewModel;
 
             return View(mainViewmodel);
         }

@@ -9,11 +9,15 @@ namespace TMBDTest.Models
     {
         public PopularViewModel popularViewModel {get;set;}
         public RecommendationsViewModel recommendationsViewModel { get; set; }
+        public RatedViewModel ratedViewModel { get; set; }
+        public TvPopularViewModel tvPopularViewModel { get; set; }
 
         public MainViewModel()
         {
             popularViewModel = new PopularViewModel();
             recommendationsViewModel = new RecommendationsViewModel();
+            ratedViewModel = new RatedViewModel();
+            tvPopularViewModel = new TvPopularViewModel();
         }
     }
 }

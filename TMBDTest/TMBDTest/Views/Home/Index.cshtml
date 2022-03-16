@@ -32,7 +32,7 @@
 </div>
 
 @*POPULARES*@
-<div class="peliculas-populares contenedor">
+<div class="peliculas-recommendations contenedor">
     @*<h2 class="Seccion">PELICULAS</h2>*@</br>
 
     <div class="contenedor-titulo-controles2">
@@ -80,19 +80,54 @@
         <div class="contenedor-carousel3">
             <div class="carousel">
 
-                @*@foreach (var item in Model.results)
+                @foreach (var item in Model.ratedViewModel.results)
                 {
                     string srcImg = "https://image.tmdb.org/t/p/w500" + @item.poster_path;
 
     <div class="pelicula3">
         <a href="#"><img src=@srcImg alt=""></a>
-    </div>}*@
+    </div>}
             </div>
         </div>
 
 
 
         <button role="button" id="flecha-derecha3" class="flecha-derecha3"><i class="fas fa-angle-right"></i></button>
+    </div>
+
+</div>
+
+
+@*TV FAVORITOS*@
+<div class="peliculas-tvFavoritos contenedor">
+    <h2 class="Seccion">TV SHOWS</h2></br>
+    
+
+    <div class="contenedor-titulo-controlestvFavoritos">
+
+        <h3>TV Favoritos</h3>
+        <div class="indicadorestvFavoritos"></div>
+    </div>
+
+    <div class="contenedor-principaltvFavoritos">
+        <button role="button" id="flecha-izquierdatvFavoritos" class="flecha-izquierdatvFavoritos"><i class="fas fa-angle-left"></i></button>
+
+        <div class="contenedor-carouseltvFavoritos">
+            <div class="carousel">
+
+                @foreach (var item in Model.tvPopularViewModel.results)
+                {
+                    string srcImg = "https://image.tmdb.org/t/p/w500" + @item.poster_path;
+
+    <div class="peliculatvFavoritos">
+        <a href="#"><img src=@srcImg alt=""></a>
+    </div>}
+            </div>
+        </div>
+
+
+
+        <button role="button" id="flecha-derechatvFavoritos" class="flecha-derechatvFavoritos"><i class="fas fa-angle-right"></i></button>
     </div>
 
 </div>
