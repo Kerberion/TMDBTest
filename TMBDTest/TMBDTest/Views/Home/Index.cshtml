@@ -1,7 +1,8 @@
-﻿<div class="wrapper noselect">
+﻿@model PopularViewModel
+<div class="wrapper noselect">
 
     <!-- Strip Carousel -->
-    <h1><span><a href="#">PELICULAS</a></span></h1>
+    <h1><span><a href="#"><b>PELICULAS</b></a></span></h1>
 
     <span><a href="#">Favoritos</a></span>
     <div class="strip-carousel" id="favoritos">
@@ -9,26 +10,33 @@
         <div class="arrow-right">&rsaquo;</div>
 
         <div class="frames">
-            <a href="#">
-                <div class="frame">
-                    <img src="https://occ-0-1567-1123.1.nflxso.net/dnm/api/v5/rendition/412e4119fb212e3ca9f1add558e2e7fed42f8fb4/AAAABRvngexxF8H1-OzRWFSj6ddD-aB93tTBP9kMNz3cIVfuIfLEP1E_0saiNAwOtrM6xSOXvoiSCMsihWSkW0dq808-R7_lBnr6WHbjkKBX6I3sD0uCcS8kSPbRjEDdG8CeeVXEAEV6spQ.webp" alt="Describe Image">
-                </div>
-            </a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
 
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
+            @foreach (var item in Model.results)
+            {
+                string srcImg = "https://image.tmdb.org/t/p/w500" + @item.poster_path;
+                <a href="#"><div class="frame"><img class="responsiveimg" src=@srcImg alt="Describe Image"></div></a>}
 
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
+
+            @*<a href="#">
+            <div class="frame">
+                <img src="https://occ-0-1567-1123.1.nflxso.net/dnm/api/v5/rendition/412e4119fb212e3ca9f1add558e2e7fed42f8fb4/AAAABRvngexxF8H1-OzRWFSj6ddD-aB93tTBP9kMNz3cIVfuIfLEP1E_0saiNAwOtrM6xSOXvoiSCMsihWSkW0dq808-R7_lBnr6WHbjkKBX6I3sD0uCcS8kSPbRjEDdG8CeeVXEAEV6spQ.webp" alt="Describe Image">
+            </div>
+        </a>
+        <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
+        <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
+        <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
+        <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
+
+        <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
+        <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
+        <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
+        <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
+        <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
+
+        <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
+        <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
+        <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
+        <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>*@
         </div>
     </div>
 
@@ -64,7 +72,13 @@
         <div class="arrow-right">&rsaquo;</div>
 
         <div class="frames">
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
+
+            @foreach (var item in Model.results)
+            {
+                <a href="#"><div class="frame"><img src="https://image.tmdb.org/t/p/w500" + @item.poster_path alt="Describe Image"></div></a>
+            }
+
+            @*<a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
             <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
             <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
             <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
@@ -78,13 +92,13 @@
             <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
             <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
             <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
-            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>
+            <a href="#"><div class="frame"><img src="" alt="Describe Image"></div></a>*@
         </div>
     </div>
 
 
     <!--Comienzan los TvShows-->
-    <h1><span><a href="#">TV SHOW</a></span></h1>
+    <h1><span><a href="#"><b>TV SHOW</b></a></span></h1>
 
     <span><a href="#">Favoritos</a></span>
     <div class="strip-carousel" id="favoritos">

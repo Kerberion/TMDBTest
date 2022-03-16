@@ -8,6 +8,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TMBDTest.Interfaces;
+using TMBDTest.Repository;
+using TMBDTest.Services;
 
 namespace TMBDTest
 {
@@ -16,14 +19,21 @@ namespace TMBDTest
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+
+             Global.Settings.UrlAPI = Configuration.GetSection("UrlAPI").Value;
+             Global.Settings.ApiKey = Configuration.GetSection("ApiKey").Value;
         }
 
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {
+        {            
             services.AddControllersWithViews();
+
+            services.AddScoped<IPeliculaRepository, PeliculaRepository>();
+            services.AddScoped<ITvShowRepository, TvShowRepository>();
+            services.AddScoped<IServices, ServiceClient>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
