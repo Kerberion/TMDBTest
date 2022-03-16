@@ -17,13 +17,46 @@
                 @foreach (var item in Model.popularViewModel.results)
                 {
                     string srcImg = "https://image.tmdb.org/t/p/w500" + @item.poster_path;
+                    string srcBackImg = "https://image.tmdb.org/t/p/w500" + @item.backdrop_path;
+                    string idModal = "#mi_modal" + item.id;
+                    string identifierModal = "mi_modal" + item.id;
 
     <div class="pelicula">
-        <a href="#"><img src=@srcImg alt=""></a>
-    </div>}
+        <a data-toggle="modal" href=@idModal><img src=@srcImg alt=""></a>
+    </div>
+    <div class="modal fade modal" id=@identifierModal tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">@item.title</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row" style="padding:15px">
+                        <img class="img-fluid" alt="Responsive image" src=@srcBackImg />
+                    </div>
+                    <div class="row text-justify" style="padding:15px">
+                        @item.overview
+                    </div>
+                    <div class="row" style="padding:15px">
+                        Fecha de lanzamiento: @item.release_date
+                    </div>
+                    <div class="row" style="padding:15px">
+                        Popularidad: @item.popularity
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                </div>
             </div>
         </div>
-
+    </div>
+    }
+            </div>
+        </div>
+        
 
 
         <button role="button" id="flecha-derecha" class="flecha-derecha"><i class="fas fa-angle-right"></i></button>
@@ -50,10 +83,43 @@
                 @foreach (var item in Model.recommendationsViewModel.results)
                 {
                     string srcImg = "https://image.tmdb.org/t/p/w500" + @item.poster_path;
+                    string srcBackImg = "https://image.tmdb.org/t/p/w500" + @item.backdrop_path;
+                    string idModal = "#mi_modal" + item.id;
+                    string identifierModal = "mi_modal" + item.id;
 
     <div class="pelicula2">
-        <a href="#"><img src=@srcImg alt=""></a>
-    </div>}
+        <a data-toggle="modal" href=@idModal><img src=@srcImg alt=""></a>
+    </div>
+    <div class="modal fade modal" id=@identifierModal tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">@item.title</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row" style="padding:15px">
+                        <img class="img-fluid" alt="Responsive image" src=@srcBackImg />
+                    </div>
+                    <div class="row text-justify" style="padding:15px">
+                        @item.overview
+                    </div>
+                    <div class="row" style="padding:15px">
+                        Fecha de lanzamiento: @item.release_date
+                    </div>
+                    <div class="row" style="padding:15px">
+                        Popularidad: @item.popularity
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    }
             </div>
         </div>
 
@@ -83,10 +149,43 @@
                 @foreach (var item in Model.ratedViewModel.results)
                 {
                     string srcImg = "https://image.tmdb.org/t/p/w500" + @item.poster_path;
+                    string srcBackImg = "https://image.tmdb.org/t/p/w500" + @item.backdrop_path;
+                    string idModal = "#mi_modal" + item.id;
+                    string identifierModal = "mi_modal" + item.id;
 
     <div class="pelicula3">
-        <a href="#"><img src=@srcImg alt=""></a>
-    </div>}
+        <a data-toggle="modal" href=@idModal><img src=@srcImg alt=""></a>
+    </div>
+    <div class="modal fade modal" id=@identifierModal tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">@item.title</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row" style="padding:15px">
+                        <img class="img-fluid" alt="Responsive image" src=@srcBackImg />
+                    </div>
+                    <div class="row text-justify" style="padding:15px">
+                        @item.overview
+                    </div>
+                    <div class="row" style="padding:15px">
+                        Fecha de lanzamiento: @item.release_date
+                    </div>
+                    <div class="row" style="padding:15px">
+                        Popularidad: @item.popularity
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    }
             </div>
         </div>
 
@@ -118,10 +217,43 @@
                 @foreach (var item in Model.tvPopularViewModel.results)
                 {
                     string srcImg = "https://image.tmdb.org/t/p/w500" + @item.poster_path;
+                    string srcBackImg = "https://image.tmdb.org/t/p/w500" + @item.backdrop_path;
+                    string idModal = "#mi_modal" + item.id;
+                    string identifierModal = "mi_modal" + item.id;
 
     <div class="peliculatvFavoritos">
-        <a href="#"><img src=@srcImg alt=""></a>
-    </div>}
+        <a data-toggle="modal" href=@idModal><img src=@srcImg alt=""></a>
+    </div>
+    <div class="modal fade modal" id=@identifierModal tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">@item.name</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row" style="padding:15px">
+                        <img class="img-fluid" alt="Responsive image" src=@srcBackImg />
+                    </div>
+                    <div class="row text-justify" style="padding:15px">
+                        @item.overview
+                    </div>
+                    <div class="row" style="padding:15px">
+                        Fecha de lanzamiento: @item.first_air_date
+                    </div>
+                    <div class="row" style="padding:15px">
+                        Popularidad: @item.popularity
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    }
             </div>
         </div>
 
@@ -151,10 +283,43 @@
                 @foreach (var item in Model.tvRecommendationsViewModel.results)
                 {
                     string srcImg = "https://image.tmdb.org/t/p/w500" + @item.poster_path;
+                    string srcBackImg = "https://image.tmdb.org/t/p/w500" + @item.backdrop_path;
+                    string idModal = "#mi_modal" + item.id;
+                    string identifierModal = "mi_modal" + item.id;
 
     <div class="peliculaTvRecommendations">
-        <a href="#"><img src=@srcImg alt=""></a>
-    </div>}
+        <a data-toggle="modal" href=@idModal><img src=@srcImg alt=""></a>
+    </div>
+    <div class="modal fade modal" id=@identifierModal tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">@item.name</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row" style="padding:15px">
+                        <img class="img-fluid" alt="Responsive image" src=@srcBackImg />
+                    </div>
+                    <div class="row text-justify" style="padding:15px">
+                        @item.overview
+                    </div>
+                    <div class="row" style="padding:15px">
+                        Fecha de lanzamiento: @item.first_air_date
+                    </div>
+                    <div class="row" style="padding:15px">
+                        Popularidad: @item.popularity
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    }
             </div>
         </div>
 
@@ -184,14 +349,45 @@
                 @foreach (var item in Model.tvRatedViewModel.results)
                 {
                     string srcImg = "https://image.tmdb.org/t/p/w500" + @item.poster_path;
+                    string srcBackImg = "https://image.tmdb.org/t/p/w500" + @item.backdrop_path;
+                    string idModal = "#mi_modal" + item.id;
+                    string identifierModal = "mi_modal" + item.id;
 
     <div class="peliculaTvRated">
-        <a href="#"><img src=@srcImg alt=""></a>
-    </div>}
+        <a data-toggle="modal" href=@idModal><img src=@srcImg alt=""></a>
+    </div>
+    <div class="modal fade modal" id=@identifierModal tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">@item.name</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row" style="padding:15px">
+                        <img class="img-fluid" alt="Responsive image" src=@srcBackImg />
+                    </div>
+                    <div class="row text-justify" style="padding:15px">
+                        @item.overview
+                    </div>
+                    <div class="row" style="padding:15px">
+                        Fecha de lanzamiento: @item.first_air_date
+                    </div>
+                    <div class="row" style="padding:15px">
+                        Popularidad: @item.popularity
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                </div>
             </div>
         </div>
-
-
+    </div>
+    }
+            </div>
+        </div>
 
         <button role="button" id="flecha-derechaTvRated" class="flecha-derechaTvRated"><i class="fas fa-angle-right"></i></button>
     </div>
